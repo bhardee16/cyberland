@@ -31,7 +31,7 @@ The mobile application, Cyberland, aims to teach high school students about cybe
 
 The application will open to a page with seven icons, each describing different levels the user must go through to complete their learning and protect Cyberland. Users can navigate to Cyberland by clicking on one of the seven icons and then watch their city grow and protect itself against cyberbullying behaviors.
 
-All code was built by the team members of team K. This project is not a continuation of past teams.
+Not all code was built by the team members of Team K. This project is a continuation of past teams.
 
 ### Built With
 
