@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvrnfjkcmpr8s"
-path="res://.godot/imported/green.png-e3a17091688e10a7013279b38edc7f8a.ctex"
+uid="uid://kn2jbysc3noa"
+path="res://.godot/imported/(Online Deception).jpeg-9ff757e76442776101d2c2e144c0b21b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gut/images/green.png"
-dest_files=["res://.godot/imported/green.png-e3a17091688e10a7013279b38edc7f8a.ctex"]
+source_file="res://Missions/mission_2/mission2_game/cards/(Online Deception).jpeg"
+dest_files=["res://.godot/imported/(Online Deception).jpeg-9ff757e76442776101d2c2e144c0b21b.ctex"]
 
 [params]
 

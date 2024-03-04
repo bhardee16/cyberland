@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0en3nigca2lb" path="res://Images/collections_background .png" id="1_08r7s"]
 [ext_resource type="PackedScene" uid="uid://b6jhxxvvwogk7" path="res://login.tscn" id="1_leggr"]
-[ext_resource type="FontVariation" uid="uid://dnjsxy85hmidx" path="res://roboto_medium.tres" id="2_v0jji"]
+[ext_resource type="FontVariation" uid="uid://cx8emjpdeq4ul" path="res://roboto_medium.tres" id="2_v0jji"]
 
 [node name="Collections" type="Node2D"]
 

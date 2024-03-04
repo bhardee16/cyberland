@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvrnfjkcmpr8s"
-path="res://.godot/imported/green.png-e3a17091688e10a7013279b38edc7f8a.ctex"
+uid="uid://1rliwsat2kkb"
+path="res://.godot/imported/(Impudent Harassment).jpeg-5a292cebc762c68587a3aa0c8e0535f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gut/images/green.png"
-dest_files=["res://.godot/imported/green.png-e3a17091688e10a7013279b38edc7f8a.ctex"]
+source_file="res://Missions/mission_2/mission2_game/cards/(Impudent Harassment).jpeg"
+dest_files=["res://.godot/imported/(Impudent Harassment).jpeg-5a292cebc762c68587a3aa0c8e0535f6.ctex"]
 
 [params]
 

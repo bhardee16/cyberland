@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmq81fck6joa8"]
+
+[ext_resource type="Texture2D" uid="uid://b1iov6mmay580" path="res://Images/cityscape.png" id="1_6agnj"]
+[ext_resource type="Texture2D" uid="uid://c61daik220bkq" path="res://Images/avatar.png" id="2_cow6a"]
+
+[node name="Avatar" type="Node2D"]
+
+[node name="backgroundCity" type="Sprite2D" parent="."]
+position = Vector2(288, 512)
+texture = ExtResource("1_6agnj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(114, 132)
+texture = ExtResource("2_cow6a")

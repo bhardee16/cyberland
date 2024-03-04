@@ -23,7 +23,7 @@ func _on_questions_btn_pressed():
 	get_tree().change_scene_to_file("")
 
 func _on_avatar_btn_pressed():
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://avatar.tscn")
 
 func _on_files_btn_pressed():
 	get_tree().change_scene_to_file("res://files.tscn")

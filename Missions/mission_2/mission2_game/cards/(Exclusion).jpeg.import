@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvrnfjkcmpr8s"
-path="res://.godot/imported/green.png-e3a17091688e10a7013279b38edc7f8a.ctex"
+uid="uid://cq86pp3fhy1h6"
+path="res://.godot/imported/(Exclusion).jpeg-e1a8973a23100064218b70bc79a4dfba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gut/images/green.png"
-dest_files=["res://.godot/imported/green.png-e3a17091688e10a7013279b38edc7f8a.ctex"]
+source_file="res://Missions/mission_2/mission2_game/cards/(Exclusion).jpeg"
+dest_files=["res://.godot/imported/(Exclusion).jpeg-e1a8973a23100064218b70bc79a4dfba.ctex"]
 
 [params]
 
