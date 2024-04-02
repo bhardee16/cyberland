@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=3 uid="uid://ddg3hq2krwm6i"]
+
+[ext_resource type="Texture2D" uid="uid://bsd1gukqnh7x6" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/idle/player-idle-1.png" id="1_p6ksm"]
+[ext_resource type="Texture2D" uid="uid://dytso7n1cfgyd" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/idle/player-idle-2.png" id="2_vlyvn"]
+[ext_resource type="Texture2D" uid="uid://0jsaalkh85lf" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/idle/player-idle-3.png" id="3_37wak"]
+[ext_resource type="Texture2D" uid="uid://d51trkrgbdc1" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/idle/player-idle-4.png" id="4_mviep"]
+[ext_resource type="Texture2D" uid="uid://de1xye66v85yp" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/jump/player-jump-1.png" id="5_wctwl"]
+[ext_resource type="Texture2D" uid="uid://crujluwghfkc8" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/jump/player-jump-2.png" id="6_k2c2r"]
+[ext_resource type="Texture2D" uid="uid://bovvu03omxl6h" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/run/player-run-1.png" id="7_ry4d7"]
+[ext_resource type="Texture2D" uid="uid://weeumkkxecrb" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/run/player-run-2.png" id="8_1n2a3"]
+[ext_resource type="Texture2D" uid="uid://cmfwndb3upls2" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/run/player-run-3.png" id="9_0l1j0"]
+[ext_resource type="Texture2D" uid="uid://cqjsituk3thhb" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/run/player-run-4.png" id="10_351kc"]
+[ext_resource type="Texture2D" uid="uid://drl2ulx62qgru" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/run/player-run-5.png" id="11_5fgr8"]
+[ext_resource type="Texture2D" uid="uid://4e6adaer3l6s" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/run/player-run-6.png" id="12_4r80h"]
+
+[sub_resource type="GDScript" id="GDScript_3sj03"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbcw7"]
+radius = 9.0
+height = 22.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_px6ce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p6ksm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vlyvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_37wak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mviep")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wctwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k2c2r")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ry4d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1n2a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0l1j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_351kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5fgr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4r80h")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[node name="Character" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = SubResource("GDScript_3sj03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_qbcw7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_px6ce")
+animation = &"Jump"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(1.6, 1.6)
