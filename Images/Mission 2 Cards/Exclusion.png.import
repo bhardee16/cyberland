@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kn2jbysc3noa"
-path="res://.godot/imported/(Online Deception).jpeg-9ff757e76442776101d2c2e144c0b21b.ctex"
+uid="uid://v0yfijhuynvv"
+path="res://.godot/imported/Exclusion.png-0fa9dfea5966a4b88058916d9cf62940.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Missions/mission_2/mission2_game/cards/(Online Deception).jpeg"
-dest_files=["res://.godot/imported/(Online Deception).jpeg-9ff757e76442776101d2c2e144c0b21b.ctex"]
+source_file="res://Images/Mission 2 Cards/Exclusion.png"
+dest_files=["res://.godot/imported/Exclusion.png-0fa9dfea5966a4b88058916d9cf62940.ctex"]
 
 [params]
 

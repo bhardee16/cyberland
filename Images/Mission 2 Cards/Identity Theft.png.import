@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgkv8e65n6vkb"
-path="res://.godot/imported/(Assuming Another Identity).jpeg-16792d5055f6555cc60cc4c89f36667f.ctex"
+uid="uid://bsm6rdcp0x4yn"
+path="res://.godot/imported/Identity Theft.png-adf90ae656dcdb93a60124d874f6b7d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Missions/mission_2/mission2_game/cards/(Assuming Another Identity).jpeg"
-dest_files=["res://.godot/imported/(Assuming Another Identity).jpeg-16792d5055f6555cc60cc4c89f36667f.ctex"]
+source_file="res://Images/Mission 2 Cards/Identity Theft.png"
+dest_files=["res://.godot/imported/Identity Theft.png-adf90ae656dcdb93a60124d874f6b7d2.ctex"]
 
 [params]
 

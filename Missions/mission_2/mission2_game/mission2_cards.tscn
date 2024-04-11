@@ -1,0 +1,154 @@
+[gd_scene load_steps=14 format=3 uid="uid://bnp33jth2dwlm"]
+
+[ext_resource type="Texture2D" uid="uid://rs1mwl578p5e" path="res://Images/general_background_center_shine.png" id="1_0p0v8"]
+[ext_resource type="Script" path="res://Missions/mission_2/mission2_game/mission2_script.gd" id="1_472ng"]
+[ext_resource type="FontFile" uid="uid://c8mehlkrpv7vi" path="res://Roboto-Medium.ttf" id="2_xod0b"]
+[ext_resource type="Texture2D" uid="uid://dd3jdpf1dkmp4" path="res://Images/Mission 2 Cards/Cyber Bullying.png" id="4_rnu8j"]
+[ext_resource type="Texture2D" uid="uid://jul4vl2u527w" path="res://Images/Mission 2 Cards/Defamation.png" id="5_doeew"]
+[ext_resource type="Texture2D" uid="uid://misgmacxn5pm" path="res://Images/Mission 2 Cards/Disclosure.png" id="6_5w4tg"]
+[ext_resource type="Texture2D" uid="uid://v0yfijhuynvv" path="res://Images/Mission 2 Cards/Exclusion.png" id="7_he6mw"]
+[ext_resource type="Texture2D" uid="uid://bsm6rdcp0x4yn" path="res://Images/Mission 2 Cards/Identity Theft.png" id="8_hv1fq"]
+[ext_resource type="Texture2D" uid="uid://dbwrjdf4rppnt" path="res://Images/Mission 2 Cards/Mobbing Culture.png" id="9_2nfp5"]
+[ext_resource type="Texture2D" uid="uid://8w7dt0wwelhb" path="res://Images/Mission 2 Cards/Instigation.png" id="10_u0ln4"]
+[ext_resource type="Texture2D" uid="uid://cb87h5m5caaof" path="res://Images/Mission 2 Cards/Online Deception.png" id="11_rph0j"]
+[ext_resource type="Texture2D" uid="uid://c7tgy0tbf7t4o" path="res://Images/Mission 2 Cards/Online Harassment.png" id="12_ndoqv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_efyka"]
+font = ExtResource("2_xod0b")
+font_size = 40
+
+[node name="Mission2Cards" type="Node2D"]
+script = ExtResource("1_472ng")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(289.5, 509.713)
+scale = Vector2(0.553009, 0.550634)
+texture = ExtResource("1_0p0v8")
+
+[node name="MissionTitle" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 42.0
+offset_right = 416.0
+offset_bottom = 113.0
+text = "Mission 2"
+label_settings = SubResource("LabelSettings_efyka")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 53.0
+offset_top = 114.0
+offset_right = 525.0
+offset_bottom = 418.0
+
+[node name="Def sapce" type="Label" parent="Panel"]
+offset_left = 103.0
+offset_top = 117.0
+offset_right = 364.0
+offset_bottom = 188.0
+text = "Def Space"
+label_settings = SubResource("LabelSettings_efyka")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 25.0
+offset_top = 454.0
+offset_right = 556.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="C B" type="Button" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("4_rnu8j")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Defam" type="Button" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("5_doeew")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Dis" type="Button" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("6_5w4tg")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="C B" type="Button" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("7_he6mw")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Defam" type="Button" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("8_hv1fq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Dis" type="Button" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("9_2nfp5")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="C B" type="Button" parent="VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("10_u0ln4")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Defam" type="Button" parent="VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("11_rph0j")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Dis" type="Button" parent="VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0.937255)
+custom_minimum_size = Vector2(150, 168)
+layout_mode = 2
+icon = ExtResource("12_ndoqv")
+flat = true
+icon_alignment = 1
+expand_icon = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgpy5466aumau"
-path="res://.godot/imported/(Cyber Harassment).jpeg-59133a951788626ecde5f45758fd7bc9.ctex"
+uid="uid://misgmacxn5pm"
+path="res://.godot/imported/Disclosure.png-497e3b17070ba6209e3720ff69fb2ead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Missions/mission_2/mission2_game/cards/(Cyber Harassment).jpeg"
-dest_files=["res://.godot/imported/(Cyber Harassment).jpeg-59133a951788626ecde5f45758fd7bc9.ctex"]
+source_file="res://Images/Mission 2 Cards/Disclosure.png"
+dest_files=["res://.godot/imported/Disclosure.png-497e3b17070ba6209e3720ff69fb2ead.ctex"]
 
 [params]
 

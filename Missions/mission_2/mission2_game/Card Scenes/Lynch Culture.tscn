@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs16vutpwpu3d"]
+
+[sub_resource type="GDScript" id="GDScript_7cgbi"]
+script/source = "extends Node
+
+@onready var rect = Rect2(0, 0, 100, 150)
+@onready var lynch_culture = $\"Lynch Culture Card\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	lynch_culture.region_rect = rect
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ss3lq"]
+load_path = "res://.godot/imported/ (Lynch Culture).jpeg-166d6783785a74c48a1267410fd94126.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_afxjr"]
+font_size = 20
+
+[node name="LynchCulture" type="Node2D"]
+script = SubResource("GDScript_7cgbi")
+
+[node name="Lynch Culture Card" type="Sprite2D" parent="."]
+texture = SubResource("CompressedTexture2D_ss3lq")
+
+[node name="Lynch Culture Label" type="Label" parent="."]
+offset_left = -482.0
+offset_top = 521.0
+offset_right = -360.0
+offset_bottom = 545.0
+scale = Vector2(8, 8)
+text = "Lynch Culture"
+label_settings = SubResource("LabelSettings_afxjr")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

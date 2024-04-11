@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq86pp3fhy1h6"
-path="res://.godot/imported/(Exclusion).jpeg-e1a8973a23100064218b70bc79a4dfba.ctex"
+uid="uid://jul4vl2u527w"
+path="res://.godot/imported/Defamation.png-40f32d3e5ac692a216c59f83a84c0c58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Missions/mission_2/mission2_game/cards/(Exclusion).jpeg"
-dest_files=["res://.godot/imported/(Exclusion).jpeg-e1a8973a23100064218b70bc79a4dfba.ctex"]
+source_file="res://Images/Mission 2 Cards/Defamation.png"
+dest_files=["res://.godot/imported/Defamation.png-40f32d3e5ac692a216c59f83a84c0c58.ctex"]
 
 [params]
 
