@@ -41,6 +41,7 @@ offset_right = 525.0
 offset_bottom = 418.0
 
 [node name="Def sapce" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 103.0
 offset_top = 117.0
 offset_right = 364.0
@@ -50,10 +51,11 @@ label_settings = SubResource("LabelSettings_efyka")
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 25.0
-offset_top = 454.0
-offset_right = 556.0
-offset_bottom = 1000.0
+clip_contents = true
+offset_left = 75.0
+offset_top = 425.0
+offset_right = 501.0
+offset_bottom = 969.0
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -62,28 +64,36 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="C B" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Cyber Bullying" type="Button" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 icon = ExtResource("4_rnu8j")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Defam" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Defamation" type="Button" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("5_doeew")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Dis" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Disclosure" type="Button" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("6_5w4tg")
 flat = true
 icon_alignment = 1
@@ -94,28 +104,37 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="C B" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="Exclusion" type="Button" parent="VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("7_he6mw")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Defam" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="Identity Theft" type="Button" parent="VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("8_hv1fq")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Dis" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="Mobbing Culture" type="Button" parent="VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("9_2nfp5")
 flat = true
 icon_alignment = 1
@@ -126,29 +145,48 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="C B" type="Button" parent="VBoxContainer/HBoxContainer3"]
+[node name="Instigation" type="Button" parent="VBoxContainer/HBoxContainer3"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("10_u0ln4")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Defam" type="Button" parent="VBoxContainer/HBoxContainer3"]
+[node name="Online Deception" type="Button" parent="VBoxContainer/HBoxContainer3"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("11_rph0j")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Dis" type="Button" parent="VBoxContainer/HBoxContainer3"]
+[node name="Online Harassment" type="Button" parent="VBoxContainer/HBoxContainer3"]
 modulate = Color(1, 1, 1, 0.937255)
-custom_minimum_size = Vector2(150, 168)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
 icon = ExtResource("12_ndoqv")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Cyber Bullying" to="." method="_on_cyber_bullying_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Defamation" to="." method="_on_defamation_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Disclosure" to="." method="_on_disclosure_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Exclusion" to="." method="_on_exclusion_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Identity Theft" to="." method="_on_identity_theft_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Mobbing Culture" to="." method="_on_mobbing_culture_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Instigation" to="." method="_on_instigation_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Online Deception" to="." method="_on_online_deception_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Online Harassment" to="." method="_on_online_harassment_pressed"]
