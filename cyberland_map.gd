@@ -19,3 +19,6 @@ func _process(delta):
 
 func _on_task_1_button_pressed():
 	get_tree().change_scene_to_file("res://Missions/mission_1/task1.tscn")
+
+func _on_task_2_button_pressed():
+	get_tree().change_scene_to_file("res://Missions/mission_2/mission2_game/mission2_cards.tscn")
