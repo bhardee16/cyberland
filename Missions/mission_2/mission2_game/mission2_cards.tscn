@@ -64,7 +64,7 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="cyber_bullying" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Cyber Bullying" type="Button" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -75,7 +75,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="defamation" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Defamation" type="Button" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -87,7 +87,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="disclosure" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Disclosure" type="Button" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -104,7 +104,7 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="exclusion" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="Exclusion" type="Button" parent="VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -116,7 +116,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="identity_theft" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="Identity Theft" type="Button" parent="VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -128,7 +128,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="mobbing_culture" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="Mobbing Culture" type="Button" parent="VBoxContainer/HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -145,7 +145,7 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="instigation" type="Button" parent="VBoxContainer/HBoxContainer3"]
+[node name="Instigation" type="Button" parent="VBoxContainer/HBoxContainer3"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -157,7 +157,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="online_deception" type="Button" parent="VBoxContainer/HBoxContainer3"]
+[node name="Online Deception" type="Button" parent="VBoxContainer/HBoxContainer3"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -169,7 +169,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="online_harassment" type="Button" parent="VBoxContainer/HBoxContainer3"]
+[node name="Online Harassment" type="Button" parent="VBoxContainer/HBoxContainer3"]
 modulate = Color(1, 1, 1, 0.937255)
 clip_contents = true
 custom_minimum_size = Vector2(122, 168)
@@ -181,12 +181,12 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/cyber_bullying" to="." method="_on_cyber_bullying_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/defamation" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/disclosure" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/exclusion" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/identity_theft" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/mobbing_culture" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer3/instigation" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer3/online_deception" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer3/online_harassment" to="." method="_on_card_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Cyber Bullying" to="." method="_on_cyber_bullying_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Defamation" to="." method="_on_defamation_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Disclosure" to="." method="_on_disclosure_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Exclusion" to="." method="_on_exclusion_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Identity Theft" to="." method="_on_identity_theft_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Mobbing Culture" to="." method="_on_mobbing_culture_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Instigation" to="." method="_on_instigation_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Online Deception" to="." method="_on_online_deception_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Online Harassment" to="." method="_on_online_harassment_pressed"]
