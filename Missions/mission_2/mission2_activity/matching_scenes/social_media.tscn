@@ -1,0 +1,147 @@
+[gd_scene load_steps=14 format=3 uid="uid://bxr6q7a4lpct0"]
+
+[ext_resource type="Script" path="res://Missions/mission_2/mission2_activity/matching_scenes/social_media.gd" id="1_gxq2x"]
+[ext_resource type="Texture2D" uid="uid://rs1mwl578p5e" path="res://Images/general_background_center_shine.png" id="2_ypy6l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_28nx1"]
+load_path = "res://.godot/imported/1.png-2f6ee1861f442927f9b8a24291389876.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvvjt"]
+load_path = "res://.godot/imported/2.png-021bd8441830a8f48b8d8e0479100f10.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x3185"]
+load_path = "res://.godot/imported/3.png-2a012381862664ec57e85a535daaa900.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_few13"]
+load_path = "res://.godot/imported/4.png-afd2bd6ef1dca8c6340a139534618b39.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o4ayv"]
+load_path = "res://.godot/imported/5.png-397fc82ff50928ffd12c9fc83ee139ad.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1wcn"]
+load_path = "res://.godot/imported/6.png-b0b14e7b86682827a5bc7a616948bb90.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r02fk"]
+load_path = "res://.godot/imported/7.png-6533d9c00a9e379f0183daf7c691101c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_is7h0"]
+load_path = "res://.godot/imported/8.png-3c50acb3987edae52b4fe4cb1e392835.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0s5r"]
+load_path = "res://.godot/imported/9.png-f82bad2215595d1d4fd378ecb9a79320.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jtpl4"]
+load_path = "res://.godot/imported/10.png-3cc55563401a4d74b2bcd3531e87d333.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ocud"]
+load_path = "res://.godot/imported/11.png-658055bc5f8cd3e9cdeb4d1217b89c07.ctex"
+
+[node name="SocialMedia" type="Node2D"]
+script = ExtResource("1_gxq2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(289.5, 509.713)
+scale = Vector2(0.553009, 0.550634)
+texture = ExtResource("2_ypy6l")
+script = ExtResource("1_gxq2x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 142.0
+offset_top = 33.0
+offset_right = 414.0
+offset_bottom = 102.0
+text = "Application"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hate Speech" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 404.0
+offset_right = 154.0
+offset_bottom = 537.0
+icon = SubResource("CompressedTexture2D_28nx1")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Incitement" type="Button" parent="."]
+offset_left = 195.0
+offset_top = 413.0
+offset_right = 328.0
+offset_bottom = 546.0
+icon = SubResource("CompressedTexture2D_bvvjt")
+expand_icon = true
+
+[node name="Online Harrasment" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 594.0
+offset_right = 484.0
+offset_bottom = 768.0
+icon = SubResource("CompressedTexture2D_x3185")
+expand_icon = true
+
+[node name="Defamation" type="Button" parent="."]
+offset_left = 82.0
+offset_top = 764.0
+offset_right = 193.0
+offset_bottom = 870.0
+icon = SubResource("CompressedTexture2D_few13")
+expand_icon = true
+
+[node name="Impersonation" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 608.0
+offset_right = 162.0
+offset_bottom = 756.0
+icon = SubResource("CompressedTexture2D_o4ayv")
+expand_icon = true
+
+[node name="Exposure" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 760.0
+offset_right = 413.0
+offset_bottom = 910.0
+icon = SubResource("CompressedTexture2D_u1wcn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Online Deception" type="Button" parent="."]
+offset_left = 444.0
+offset_top = 482.0
+offset_right = 577.0
+offset_bottom = 615.0
+icon = SubResource("CompressedTexture2D_r02fk")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exclusion" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = SubResource("CompressedTexture2D_is7h0")
+expand_icon = true
+
+[node name="Cyberbullying" type="Button" parent="."]
+offset_left = 276.0
+offset_top = 217.0
+offset_right = 409.0
+offset_bottom = 350.0
+icon = SubResource("CompressedTexture2D_q0s5r")
+expand_icon = true
+
+[node name="Indecent Harrassment" type="Button" parent="."]
+offset_left = 446.0
+offset_top = 332.0
+offset_right = 579.0
+offset_bottom = 465.0
+icon = SubResource("CompressedTexture2D_jtpl4")
+expand_icon = true
+
+[node name="Online Trolling" type="Button" parent="."]
+offset_left = 428.0
+offset_top = 785.0
+offset_right = 580.0
+offset_bottom = 923.0
+icon = SubResource("CompressedTexture2D_7ocud")
+expand_icon = true
+
+[connection signal="pressed" from="Cyberbullying" to="." method="_on_cyberbullying_pressed"]
