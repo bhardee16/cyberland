@@ -1,0 +1,223 @@
+[gd_scene load_steps=15 format=3 uid="uid://bnp33jth2dwlm"]
+
+[ext_resource type="Script" path="res://Missions/mission_2/wiw/wiw_demo.gd" id="1_2jc1t"]
+[ext_resource type="Texture2D" uid="uid://rs1mwl578p5e" path="res://Images/general_background_center_shine.png" id="2_of7dp"]
+[ext_resource type="FontFile" uid="uid://c8mehlkrpv7vi" path="res://Roboto-Medium.ttf" id="3_2xmyx"]
+[ext_resource type="Texture2D" uid="uid://dd3jdpf1dkmp4" path="res://Images/Mission 2 Cards/Cyber Bullying.png" id="4_jlkl4"]
+[ext_resource type="Texture2D" uid="uid://jul4vl2u527w" path="res://Images/Mission 2 Cards/Defamation.png" id="5_yjya5"]
+[ext_resource type="Texture2D" uid="uid://misgmacxn5pm" path="res://Images/Mission 2 Cards/Disclosure.png" id="6_oop7y"]
+[ext_resource type="Texture2D" uid="uid://v0yfijhuynvv" path="res://Images/Mission 2 Cards/Exclusion.png" id="7_qky7b"]
+[ext_resource type="Texture2D" uid="uid://bsm6rdcp0x4yn" path="res://Images/Mission 2 Cards/Identity Theft.png" id="8_6d4a3"]
+[ext_resource type="Texture2D" uid="uid://dbwrjdf4rppnt" path="res://Images/Mission 2 Cards/Mobbing Culture.png" id="9_d53t0"]
+[ext_resource type="Texture2D" uid="uid://8w7dt0wwelhb" path="res://Images/Mission 2 Cards/Instigation.png" id="10_8o2hb"]
+[ext_resource type="Texture2D" uid="uid://cb87h5m5caaof" path="res://Images/Mission 2 Cards/Online Deception.png" id="11_mq7dr"]
+[ext_resource type="Texture2D" uid="uid://c7tgy0tbf7t4o" path="res://Images/Mission 2 Cards/Online Harassment.png" id="12_wfa74"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_efyka"]
+font = ExtResource("3_2xmyx")
+font_size = 20
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_6y4mb"]
+
+[node name="wiw_demo" type="Node2D"]
+script = ExtResource("1_2jc1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(289.5, 509.713)
+scale = Vector2(0.553009, 0.550634)
+texture = ExtResource("2_of7dp")
+
+[node name="Play" type="Button" parent="Sprite2D"]
+modulate = Color(0.223529, 0.705882, 0.105882, 1)
+offset_left = 344.0
+offset_top = 840.0
+offset_right = 491.0
+offset_bottom = 907.0
+text = "Play"
+
+[node name="MissionTitle" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 42.0
+offset_right = 416.0
+offset_bottom = 113.0
+text = "Which is Which"
+label_settings = SubResource("LabelSettings_efyka")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 53.0
+offset_top = 114.0
+offset_right = 525.0
+offset_bottom = 418.0
+
+[node name="Def sapce" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 470.0
+offset_bottom = 294.0
+text = "Click on a card to see its definition!"
+label_settings = SubResource("LabelSettings_efyka")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+offset_left = 75.0
+offset_top = 425.0
+offset_right = 501.0
+offset_bottom = 969.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Cyber Bullying" type="Button" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("4_jlkl4")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Defamation" type="Button" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("5_yjya5")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Disclosure" type="Button" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("6_oop7y")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Exclusion" type="Button" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("7_qky7b")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Identity Theft" type="Button" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("8_6d4a3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Mobbing Culture" type="Button" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("9_d53t0")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Instigation" type="Button" parent="VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("10_8o2hb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Online Deception" type="Button" parent="VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("11_mq7dr")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Online Harassment" type="Button" parent="VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0.937255)
+clip_contents = true
+custom_minimum_size = Vector2(122, 168)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_6y4mb")
+icon = ExtResource("12_wfa74")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Sprite2D/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Cyber Bullying" to="." method="_on_cyber_bullying_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Defamation" to="." method="_on_defamation_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Disclosure" to="." method="_on_disclosure_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Exclusion" to="." method="_on_exclusion_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Identity Theft" to="." method="_on_identity_theft_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Mobbing Culture" to="." method="_on_mobbing_culture_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Instigation" to="." method="_on_instigation_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Online Deception" to="." method="_on_online_deception_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Online Harassment" to="." method="_on_online_harassment_pressed"]
