@@ -1,55 +1,74 @@
 extends Node
 var selected_cards = [];
+var turn = 0;
+
+var resources = {
+			0 :{
+				"name": "facebook",
+				"desc": "This is facebook",
+				"cards": [&"Cyber Bullying"],
+				"feats": [""]
+				},
+			1 :{
+				"name": "facebook",
+				"desc": "",
+				"cards": [],
+				"feats": [""]
+				}
+			}
+
 
 func _ready():
-	for card in get_tree().get_nodes_in_group("VBoxContainer"):
-		card.connect("toggled", _on_card_toggled, 0)
-		card.connect("toggled", _on_card_toggled, 0)
+	var hbox_containers = [
+		get_node("VBoxContainer/HBoxContainer"),
+		get_node("VBoxContainer/HBoxContainer2"),
+		get_node("VBoxContainer/HBoxContainer3")
+	]
+	
+	_read_in()
 
-func _on_card_toggled(card, toggled):
-	if toggled:
-		selected_cards.append(card)
-		#card.modulate = Color8(251, 247, 25)  # Change the color when selected
-	else:
-		selected_cards.erase(card)
-		#card.modulate = Color.AZURE  # Change the color when deselected
+			
+	
+	
 
+	for hbox in hbox_containers:
+		if hbox:
+			for card in hbox.get_children():
+				if card is Button:
+					card.pressed.connect(_on_card_toggled.bind(card))
 
-func _on_cyber_bullying_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer/Cyber Bullying"), toggled_on)
+func _on_card_toggled(card):
+	print(card)
+	if card:
+		if !selected_cards.has(card.name):
+			selected_cards.append(card.name)
+			print(selected_cards)
+			card.modulate = Color.GREEN
+		else:
+			selected_cards.erase(card.name)
+			print(selected_cards)
+			card.modulate = Color.AZURE
+			
+#func _on_card_toggled_name(name):
+	#if name:
+		#if selected_cards.has(name):
+			#get_node(name).modulate = Color.AZURE
+			
+			
 
-
-func _on_defamation_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer/Defamation"), toggled_on)
-
-
-func _on_disclosure_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer/Disclosure"), toggled_on)
-
-
-func _on_exclusion_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer2/Exclusion"), toggled_on)
-
-
-func _on_identity_theft_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer2/Identity Theft"), toggled_on)
-
-
-func _on_mobbing_culture_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer2/Mobbing Culture"), toggled_on)
-
-
-func _on_instigation_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer3/Instigation"), toggled_on)
-
-
-func _on_online_deception_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer3/Online Deception"), toggled_on)
-
-
-func _on_online_harassment_toggled(toggled_on):
-	_on_card_toggled(get_node("VboxContainer/HboxContainer3/Online Harassment"), toggled_on)
+func _read_in():
+	get_node("Panel/Def sapce").text = resources[turn].name + "\n" + resources[turn].desc + "\n" #add features
 
 
 func _on_done_pressed():
-	get_tree().quit()
+	if(selected_cards == resources[turn].cards):
+		turn += 1
+		get_node("Panel/Def sapce").text = "Good Job"
+		#for card in selected_cards:
+		#`_on_card_toggled_name(card)
+		await get_tree().create_timer(3.0).timeout
+		_read_in()
+	else:
+		get_node("Panel/Def sapce").text = "Try Again"
+		await get_tree().create_timer(3.0).timeout
+		_read_in()

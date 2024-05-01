@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://lo30thqimu3r"]
+[gd_scene load_steps=14 format=3 uid="uid://lo30thqimu3r"]
 
 [ext_resource type="Texture2D" uid="uid://rs1mwl578p5e" path="res://Images/general_background_center_shine.png" id="1_chkxf"]
 [ext_resource type="Script" path="res://Missions/mission_2/wiw/wiw_play.gd" id="1_mbpop"]
@@ -12,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cb87h5m5caaof" path="res://Images/Mission 2 Cards/Online Deception.png" id="9_o186t"]
 [ext_resource type="Texture2D" uid="uid://c7tgy0tbf7t4o" path="res://Images/Mission 2 Cards/Online Harassment.png" id="10_qp05t"]
 [ext_resource type="FontFile" uid="uid://c8mehlkrpv7vi" path="res://Roboto-Medium.ttf" id="11_g7w15"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_1oer6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yfk5g"]
 font = ExtResource("11_g7w15")
@@ -55,8 +53,6 @@ clip_contents = true
 custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("2_u62t2")
 flat = true
 icon_alignment = 1
@@ -69,8 +65,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("3_t5vca")
 flat = true
 icon_alignment = 1
@@ -83,8 +77,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("4_ir3q0")
 flat = true
 icon_alignment = 1
@@ -102,8 +94,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("5_t1tug")
 flat = true
 icon_alignment = 1
@@ -116,8 +106,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("6_aoxrh")
 flat = true
 icon_alignment = 1
@@ -130,8 +118,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("7_xb7dk")
 flat = true
 icon_alignment = 1
@@ -149,8 +135,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("8_3ql4x")
 flat = true
 icon_alignment = 1
@@ -163,8 +147,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("9_o186t")
 flat = true
 icon_alignment = 1
@@ -177,8 +159,6 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1oer6")
 icon = ExtResource("10_qp05t")
 flat = true
 icon_alignment = 1
@@ -212,6 +192,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[connection signal="pressed" from="Sprite2D/Done" to="." method="_on_done_pressed"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Cyber Bullying" to="." method="_on_cyber_bullying_toggled"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Defamation" to="." method="_on_defamation_toggled"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Disclosure" to="." method="_on_disclosure_toggled"]
