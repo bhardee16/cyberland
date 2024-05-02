@@ -14,70 +14,81 @@ var cardDescriptions = {
 }
 
 func _ready():
-	for card in get_tree().get_nodes_in_group("VBoxContainer"):
-		card.connect("press", _on_card_pressed(self), 0)
-		
+	var hbox_containers = [
+		get_node("VBoxContainer/HBoxContainer"),
+		get_node("VBoxContainer/HBoxContainer2"),
+		get_node("VBoxContainer/HBoxContainer3")
+	]
+	
+	for hbox in hbox_containers:
+		if hbox:
+			for card in hbox.get_children():
+				if card is Button:
+					card.pressed.connect(_on_card_pressed.bind(card))
 		
 func _on_card_pressed(card):
-	#card.modulate = Color.GREEN;
-	get_node("Panel/Def sapce").text = cardDescriptions[card.name];
+	deselect_all()
+	selected_cards.clear()
+	get_node("Panel/Def sapce").text = cardDescriptions[card.name]
+	selected_cards.append(card);
 	card.modulate = Color.GREEN
 
-func _on_card_depressed(card):
-	card.modulate = Color.AZURE;
-	get_node("Panel/Def sapce").text = "Def Space."
 
+func deselect_all():
+	if !selected_cards.is_empty():
+		var cards_to_deselect = selected_cards.duplicate()
+		for card in cards_to_deselect:
+			selected_cards.erase(card)
+			card.modulate = Color.AZURE
+		get_node("Panel/Def sapce").text = "Def Space."
 
-func selected(card):
-	var index = selected_cards.find(card);
-	if(len(selected_cards) == 1):
-		if(index == -1):
-			selected_cards.append(card);
-			_on_card_pressed(card)
-		else:
-			selected_cards.remove_at(index)
-			
-			_on_card_depressed(card)
-	else:
-		
-		selected_cards.append(card);
-		_on_card_pressed(card)
-
-
-func _on_cyber_bullying_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer/Cyber Bullying"))
-
-
-func _on_defamation_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer/Defamation"))
-
-func _on_exposure_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer/Exposure"))
-
-
-func _on_exclusion_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer2/Exclusion"))
-
-
-func _on_identity_theft_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer2/Identity Theft"))
-
-
-func _on_mobbing_culture_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer2/Mobbing Culture"))
-
-
-func _on_instigation_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer3/Instigation"))
-
-
-func _on_online_deception_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer3/Online Deception"))
-
-
-func _on_online_harassment_pressed():
-	selected(get_node("VBoxContainer/HBoxContainer3/Online Harassment"))
-
-
-func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Missions/mission_2/wiw/wiw_play.tscn")
+#func selected(card):
+	#if(len(selected_cards) != 1):
+		#if(!selected_cards.has(card)):
+			#selected_cards.append(card);
+			#_on_card_pressed(card)
+		#else:
+			#selected_cards.clear()
+			#deselect_all()
+	#else:
+		#selected_cards.append(card);
+		#_on_card_pressed(card)
+#
+#
+#func _on_cyber_bullying_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer/Cyber Bullying"))
+#
+#
+#func _on_defamation_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer/Defamation"))
+#
+#func _on_exposure_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer/Exposure"))
+#
+#
+#func _on_exclusion_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer2/Exclusion"))
+#
+#
+#func _on_identity_theft_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer2/Identity Theft"))
+#
+#
+#func _on_mobbing_culture_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer2/Mobbing Culture"))
+#
+#
+#func _on_instigation_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer3/Instigation"))
+#
+#
+#func _on_online_deception_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer3/Online Deception"))
+#
+#
+#func _on_online_harassment_pressed():
+	#selected(get_node("VBoxContainer/HBoxContainer3/Online Harassment"))
+#
+#
+#func _on_play_pressed():
+	#get_tree().change_scene_to_file("res://Missions/mission_2/wiw/wiw_play.tscn")

@@ -33,7 +33,7 @@ offset_right = 489.192
 offset_bottom = 906.552
 text = "Done"
 
-[node name="Done2" type="Button" parent="Sprite2D"]
+[node name="back" type="Button" parent="Sprite2D"]
 modulate = Color(0.223529, 0.705882, 0.105882, 1)
 offset_left = -481.909
 offset_top = -851.224
@@ -218,7 +218,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="Sprite2D/Done" to="." method="_on_done_pressed"]
-[connection signal="pressed" from="Sprite2D/Done2" to="." method="_on_done_pressed"]
+[connection signal="pressed" from="Sprite2D/back" to="." method="_on_back_pressed"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Cyber Bullying" to="." method="_on_cyber_bullying_toggled"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Defamation" to="." method="_on_defamation_toggled"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Exposure" to="." method="_on_exposure_toggled"]

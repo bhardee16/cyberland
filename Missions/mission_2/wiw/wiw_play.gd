@@ -218,3 +218,7 @@ func _on_done_pressed():
 		await get_tree().create_timer(3.0).timeout
 		deselect_all()
 		_read_in()
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://Missions/mission_2/wiw/wiw_demo.tscn")

@@ -50,10 +50,10 @@ offset_bottom = 418.0
 
 [node name="Def sapce" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 5.0
-offset_right = 470.0
-offset_bottom = 294.0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 464.0
+offset_bottom = 293.0
 text = "Click on a card to see its definition!"
 label_settings = SubResource("LabelSettings_efyka")
 horizontal_alignment = 1
