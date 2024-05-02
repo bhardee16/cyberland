@@ -1,6 +1,7 @@
 extends Node
 var selected_cards = [];
 var turn = 0;
+var score = 0;
 
 #var cards = {
 	#'Cyber Bullying': Button#49190798575
@@ -18,15 +19,15 @@ var resources = {
 			0 :{
 				"name": "Social Media Platform",
 				#"desc": "This is facebook",
-				"cards": ['Cyber Bullying'
-					,'Defamation'
-					,'Exposure'
-					,'Exclusion'
-					,'Identity Theft'
-					,'Mobbing Culture'
-					,'Instigation'
-					,'Online Deception'
-					,'Online Harassment'
+				"cards": ["Cyber Bullying",
+					"Defamation",
+					"Exposure",
+					"Exclusion",
+					"Identity Theft",
+					"Mobbing Culture",
+					"Instigation",
+					"Online Deception",
+					"Online Harassment"
 				],
 				"feats": ["Connecting with people you know or don't know",
 					"Sharing your opinions",
@@ -40,15 +41,15 @@ var resources = {
 				},
 			1 :{
 				"name": "Online Game",
-				"cards": [&"Cyber Bullying",
-					&"Defamation",
-					&"Exposure",
-					&"Exclusion",
-					&"Identity Theft",
-					&"Mobbing Culture",
-					&"Instigation",
-					&"Online Deception",
-					&"Online Harassment"
+				"cards": ["Cyber Bullying",
+					"Defamation",
+					"Exposure",
+					"Exclusion",
+					"Identity Theft",
+					"Mobbing Culture",
+					"Instigation",
+					"Online Deception",
+					"Online Harassment"
 				],
 				"feats": ["Communicating during the game",
 					"Participating in tournaments",
@@ -59,13 +60,13 @@ var resources = {
 				},
 			2 :{
 				"name": "Email Service",
-				"cards": [&"Cyber Bullying",
-					&"Defamation",
-					&"Exposure",
-					&"Identity Theft",
-					&"Instigation",
-					&"Online Deception",
-					&"Online Harassment"
+				"cards": ["Cyber Bullying",
+					"Defamation",
+					"Exposure",
+					"Identity Theft",
+					"Instigation",
+					"Online Deception",
+					"Online Harassment"
 				],
 				"feats": ["Sending/receiving emails",
 					"Sending/receiving files",
@@ -75,15 +76,15 @@ var resources = {
 				},
 			3 :{
 				"name": "Video Sharing Platform",
-				"cards": [&"Cyber Bullying",
-					&"Defamation",
-					&"Exposure",
-					&"Exclusion",
-					&"Identity Theft",
-					&"Mobbing Culture",
-					&"Instigation",
-					&"Online Deception",
-					&"Online Harassment"
+				"cards": ["Cyber Bullying",
+					"Defamation",
+					"Exposure",
+					"Exclusion",
+					"Identity Theft",
+					"Mobbing Culture",
+					"Instigation",
+					"Online Deception",
+					"Online Harassment"
 				],
 				"feats": ["Sharing videos",
 					"Content creation",
@@ -95,13 +96,13 @@ var resources = {
 				},
 			4 :{
 				"name": "Online Shopping Application",
-				"cards": [&"Cyber Bullying",
-					&"Defamation",
-					&"Exposure",
-					&"Identity Theft",
-					&"Instigation",
-					&"Online Deception",
-					&"Online Harassment"
+				"cards": ["Cyber Bullying",
+					"Defamation",
+					"Exposure",
+					"Identity Theft",
+					"Instigation",
+					"Online Deception",
+					"Online Harassment"
 				],
 				"feats": ["Online shopping",
 					"Reviewing products",
@@ -113,15 +114,15 @@ var resources = {
 				},
 			5 :{
 				"name": "Messaging Application",
-				"cards": [&"Cyber Bullying",
-					&"Defamation",
-					&"Exposure",
-					&"Exclusion",
-					&"Identity Theft",
-					&"Mobbing Culture",
-					&"Instigation",
-					&"Online Deception",
-					&"Online Harassment"
+				"cards": ["Cyber Bullying",
+					"Defamation",
+					"Exposure",
+					"Exclusion",
+					"Identity Theft",
+					"Mobbing Culture",
+					"Instigation",
+					"Online Deception",
+					"Online Harassment"
 				],
 				"feats": ["Connecting with people you know or don't know",
 					"Individual/group chat",
@@ -161,15 +162,10 @@ func _on_card_toggled(card):
 			
 func deselect_all():
 	if !selected_cards.is_empty():
-		for card in selected_cards:
+		var cards_to_deselect = selected_cards.duplicate()
+		for card in cards_to_deselect:
 			selected_cards.erase(card)
 			card.modulate = Color.AZURE
-			
-#func _on_card_toggled_name(name):
-	#if name:
-		#if selected_cards.has(name):
-			#get_node(name).modulate = Color.AZURE
-			
 			
 
 func _read_in():
@@ -177,12 +173,40 @@ func _read_in():
 	for feat in resources[turn].feats:
 		feat_text += feat + "\n"
 	get_node("Panel/Def sapce").text = resources[turn].name + "\n" + feat_text #add features
+	
+func check():
+	var contains = 0
+	if(selected_cards):
+		for card in selected_cards:
+			if(resources[turn].cards.has(card.name)):
+				print(card.name)
+				contains += 1
+			else:
+				return false
+		if(contains == len(resources[turn].cards)):
+			return true
+		else:
+			return false
+	else:
+		return false
+
+func score_update(scored):
+	if(scored):
+		score += 1
+		get_node("Sprite2D/Score").text = str(score)
+	else:
+		if(score == 0):
+			return
+		else:
+			score -= 1
+			get_node("Sprite2D/Score").text = str(score)
 
 
 func _on_done_pressed():
-	if(selected_cards == resources[turn].cards):
+	if(check()):
 		turn += 1
 		get_node("Panel/Def sapce").text = "Good Job"
+		score_update(true)
 		#for card in selected_cards:
 		#`_on_card_toggled_name(card)
 		await get_tree().create_timer(3.0).timeout
@@ -190,6 +214,7 @@ func _on_done_pressed():
 		_read_in()
 	else:
 		get_node("Panel/Def sapce").text = "Try Again"
+		score_update(false)
 		await get_tree().create_timer(3.0).timeout
 		deselect_all()
 		_read_in()
