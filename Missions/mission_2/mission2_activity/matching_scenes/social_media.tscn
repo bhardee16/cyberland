@@ -1,46 +1,126 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxr6q7a4lpct0"]
+[gd_scene load_steps=15 format=3 uid="uid://bxr6q7a4lpct0"]
 
 [ext_resource type="Script" path="res://Missions/mission_2/mission2_activity/matching_scenes/social_media.gd" id="1_gxq2x"]
 [ext_resource type="Texture2D" uid="uid://rs1mwl578p5e" path="res://Images/general_background_center_shine.png" id="2_ypy6l"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_28nx1"]
-load_path = "res://.godot/imported/1.png-2f6ee1861f442927f9b8a24291389876.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvvjt"]
-load_path = "res://.godot/imported/2.png-021bd8441830a8f48b8d8e0479100f10.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x3185"]
-load_path = "res://.godot/imported/3.png-2a012381862664ec57e85a535daaa900.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_few13"]
-load_path = "res://.godot/imported/4.png-afd2bd6ef1dca8c6340a139534618b39.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o4ayv"]
-load_path = "res://.godot/imported/5.png-397fc82ff50928ffd12c9fc83ee139ad.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1wcn"]
-load_path = "res://.godot/imported/6.png-b0b14e7b86682827a5bc7a616948bb90.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r02fk"]
-load_path = "res://.godot/imported/7.png-6533d9c00a9e379f0183daf7c691101c.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_is7h0"]
-load_path = "res://.godot/imported/8.png-3c50acb3987edae52b4fe4cb1e392835.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0s5r"]
-load_path = "res://.godot/imported/9.png-f82bad2215595d1d4fd378ecb9a79320.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jtpl4"]
-load_path = "res://.godot/imported/10.png-3cc55563401a4d74b2bcd3531e87d333.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ocud"]
-load_path = "res://.godot/imported/11.png-658055bc5f8cd3e9cdeb4d1217b89c07.ctex"
+[ext_resource type="Texture2D" uid="uid://whp7fvwgpkyn" path="res://Images/Task 2 Unselected Pieces/CyberbullyingUnselected.png" id="3_ilij4"]
+[ext_resource type="Texture2D" uid="uid://dwwh0tj46u65q" path="res://Images/Task 2 Unselected Pieces/DefamationUnselected.png" id="4_boskc"]
+[ext_resource type="Script" path="res://Missions/mission_2/mission2_activity/matching_scenes/Buttons.gd" id="4_eq8t2"]
+[ext_resource type="Texture2D" uid="uid://mmbr4gy4ufh" path="res://Images/Task 2 Unselected Pieces/ExclusionUnselected.png" id="5_eh0eq"]
+[ext_resource type="Texture2D" uid="uid://ga8d516oty6s" path="res://Images/Task 2 Unselected Pieces/ExposureUnselected.png" id="6_2sxi6"]
+[ext_resource type="Texture2D" uid="uid://on0ayo8514vc" path="res://Images/Task 2 Unselected Pieces/HateSpeechUnselected.png" id="7_ktngf"]
+[ext_resource type="Texture2D" uid="uid://iafume12gj5x" path="res://Images/Task 2 Unselected Pieces/ImpersonationUnselected.png" id="8_gk1u7"]
+[ext_resource type="Texture2D" uid="uid://df4q8rsnv3sey" path="res://Images/Task 2 Unselected Pieces/IncitementUnselected.png" id="9_sq8ps"]
+[ext_resource type="Texture2D" uid="uid://mty0vqp3xewh" path="res://Images/Task 2 Unselected Pieces/IndecentHarrassmentUnselected.png" id="10_jdu30"]
+[ext_resource type="Texture2D" uid="uid://c0e1714rgm62s" path="res://Images/Task 2 Unselected Pieces/OnlineDeceptionUnselected.png" id="11_4d1ve"]
+[ext_resource type="Texture2D" uid="uid://dn0isdtntpa5s" path="res://Images/Task 2 Unselected Pieces/OnlineHarrassmentUnselected.png" id="12_5ik1i"]
+[ext_resource type="Texture2D" uid="uid://cai1ry4jsnp0p" path="res://Images/Task 2 Unselected Pieces/OnlineTrollingUnselected.png" id="13_nwddt"]
 
 [node name="SocialMedia" type="Node2D"]
 script = ExtResource("1_gxq2x")
 
+[node name="PiecesContainer" type="VBoxContainer" parent="."]
+offset_left = 60.0
+offset_top = 300.0
+offset_right = 518.0
+offset_bottom = 912.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PiecesContainer"]
+layout_mode = 2
+
+[node name="Cyberbullying" type="Button" parent="PiecesContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("3_ilij4")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="Defamation" type="Button" parent="PiecesContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("4_boskc")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="Exclusion" type="Button" parent="PiecesContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("5_eh0eq")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PiecesContainer"]
+layout_mode = 2
+
+[node name="Exposure" type="Button" parent="PiecesContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("6_2sxi6")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="HateSpeech" type="Button" parent="PiecesContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("7_ktngf")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="Impersonation" type="Button" parent="PiecesContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("8_gk1u7")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PiecesContainer"]
+layout_mode = 2
+
+[node name="Incitement" type="Button" parent="PiecesContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("9_sq8ps")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="IndecentHarrassment" type="Button" parent="PiecesContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("10_jdu30")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="OnlineDeception" type="Button" parent="PiecesContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("11_4d1ve")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PiecesContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="OnlineHarrassment" type="Button" parent="PiecesContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("12_5ik1i")
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
+[node name="OnlineTrolling" type="Button" parent="PiecesContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+icon = ExtResource("13_nwddt")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_eq8t2")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(289.5, 509.713)
+z_index = -1
+position = Vector2(291, 513)
 scale = Vector2(0.553009, 0.550634)
 texture = ExtResource("2_ypy6l")
 script = ExtResource("1_gxq2x")
@@ -54,94 +134,14 @@ text = "Application"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Hate Speech" type="Button" parent="."]
-offset_left = 21.0
-offset_top = 404.0
-offset_right = 154.0
-offset_bottom = 537.0
-icon = SubResource("CompressedTexture2D_28nx1")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="Incitement" type="Button" parent="."]
-offset_left = 195.0
-offset_top = 413.0
-offset_right = 328.0
-offset_bottom = 546.0
-icon = SubResource("CompressedTexture2D_bvvjt")
-expand_icon = true
-
-[node name="Online Harrasment" type="Button" parent="."]
-offset_left = 311.0
-offset_top = 594.0
-offset_right = 484.0
-offset_bottom = 768.0
-icon = SubResource("CompressedTexture2D_x3185")
-expand_icon = true
-
-[node name="Defamation" type="Button" parent="."]
-offset_left = 82.0
-offset_top = 764.0
-offset_right = 193.0
-offset_bottom = 870.0
-icon = SubResource("CompressedTexture2D_few13")
-expand_icon = true
-
-[node name="Impersonation" type="Button" parent="."]
-offset_left = 34.0
-offset_top = 608.0
-offset_right = 162.0
-offset_bottom = 756.0
-icon = SubResource("CompressedTexture2D_o4ayv")
-expand_icon = true
-
-[node name="Exposure" type="Button" parent="."]
-offset_left = 264.0
-offset_top = 760.0
-offset_right = 413.0
-offset_bottom = 910.0
-icon = SubResource("CompressedTexture2D_u1wcn")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Online Deception" type="Button" parent="."]
-offset_left = 444.0
-offset_top = 482.0
-offset_right = 577.0
-offset_bottom = 615.0
-icon = SubResource("CompressedTexture2D_r02fk")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Exclusion" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
-icon = SubResource("CompressedTexture2D_is7h0")
-expand_icon = true
-
-[node name="Cyberbullying" type="Button" parent="."]
-offset_left = 276.0
-offset_top = 217.0
-offset_right = 409.0
-offset_bottom = 350.0
-icon = SubResource("CompressedTexture2D_q0s5r")
-expand_icon = true
-
-[node name="Indecent Harrassment" type="Button" parent="."]
-offset_left = 446.0
-offset_top = 332.0
-offset_right = 579.0
-offset_bottom = 465.0
-icon = SubResource("CompressedTexture2D_jtpl4")
-expand_icon = true
-
-[node name="Online Trolling" type="Button" parent="."]
-offset_left = 428.0
-offset_top = 785.0
-offset_right = 580.0
-offset_bottom = 923.0
-icon = SubResource("CompressedTexture2D_7ocud")
-expand_icon = true
-
-[connection signal="pressed" from="Cyberbullying" to="." method="_on_cyberbullying_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer/Cyberbullying" to="PiecesContainer/HBoxContainer/Cyberbullying" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer/Defamation" to="PiecesContainer/HBoxContainer/Defamation" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer/Exclusion" to="PiecesContainer/HBoxContainer/Exclusion" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer2/Exposure" to="PiecesContainer/HBoxContainer2/Exposure" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer2/HateSpeech" to="PiecesContainer/HBoxContainer2/HateSpeech" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer2/Impersonation" to="PiecesContainer/HBoxContainer2/Impersonation" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer3/Incitement" to="PiecesContainer/HBoxContainer3/Incitement" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer3/IndecentHarrassment" to="PiecesContainer/HBoxContainer3/IndecentHarrassment" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer3/OnlineDeception" to="PiecesContainer/HBoxContainer3/OnlineDeception" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer4/OnlineHarrassment" to="PiecesContainer/HBoxContainer4/OnlineHarrassment" method="_on_pressed"]
+[connection signal="pressed" from="PiecesContainer/HBoxContainer4/OnlineTrolling" to="PiecesContainer/HBoxContainer4/OnlineTrolling" method="_on_pressed"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6gxjrt2wr7pt"
-path="res://.godot/imported/OnlineHarrassmenSelected.png-80d92183978a6818465ab4e9091a5bcc.ctex"
+path="res://.godot/imported/OnlineHarrassmentSelected.png-136ba71e57dad2d39bde4611b5171351.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Task 2 Selected Pieces/OnlineHarrassmenSelected.png"
-dest_files=["res://.godot/imported/OnlineHarrassmenSelected.png-80d92183978a6818465ab4e9091a5bcc.ctex"]
+source_file="res://Images/Task 2 Selected Pieces/OnlineHarrassmentSelected.png"
+dest_files=["res://.godot/imported/OnlineHarrassmentSelected.png-136ba71e57dad2d39bde4611b5171351.ctex"]
 
 [params]
 
