@@ -41,7 +41,7 @@ offset_bottom = 560.0
 theme = SubResource("Theme_0qpwl")
 theme_override_fonts/font = ExtResource("3_uaktd")
 theme_override_font_sizes/font_size = 30
-text = "<< Start >>"
+text = "Start"
 
 [node name="BottomMenu" parent="." instance=ExtResource("3_5ym3l")]
 scale = Vector2(0.399959, -0.00197317)
