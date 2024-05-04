@@ -1,0 +1,85 @@
+[
+	{
+		"application": "Social Media Platform",
+		"answers": [
+			"HateSpeech",
+			"Incitement",
+			"OnlineHarassment",
+			"Defamation",
+			"Impersonation",
+			"Exposure",
+			"OnlineDeception",
+			"Exclusion",
+			"Cyberbullying",
+			"IndecentHarassment"]
+	},
+	{
+		"application": "Online Game",
+		"answers": [
+			"HateSpeech",
+			"Incitement",
+			"OnlineHarassment",
+			"Defamation",
+			"Impersonation",
+			"Exposure",
+			"OnlineDeception",
+			"Exclusion",
+			"Cyberbullying",
+			"IndecentHarassment"]
+	},
+	{
+		"application": "Email Service",
+		"answers": [
+			"Incitement",
+			"OnlineHarassment",
+			"Defamation",
+			"Impersonation",
+			"Exposure",
+			"OnlineDeception",
+			"Cyberbullying",
+			"IndecentHarassment"
+		]
+	},
+	{
+		"application": "Video Sharing Platform",
+		"answers": [
+			"HateSpeech",
+			"Incitement",
+			"OnlineHarassment",
+			"Defamation",
+			"Impersonation",
+			"Exposure",
+			"OnlineDeception",
+			"Exclusion",
+			"Cyberbullying",
+			"IndecentHarassment"
+		]
+	},
+	{
+		"application": "Online Shopping Platform",
+		"answers": [
+			"Incitement",
+			"OnlineHarassment",
+			"Defamation",
+			"Impersonation",
+			"Exposure",
+			"OnlineDeception",
+			"Cyberbullying",
+			"IndecentHarassment"
+		]
+	},
+	{
+		"application": "Messaging Application",
+		"answers": [
+			"HateSpeech",
+			"Incitement",
+			"OnlineHarassment",
+			"Defamation",
+			"Impersonation",
+			"Exposure",
+			"OnlineDeception",
+			"Exclusion",
+			"Cyberbullying",
+			"IndecentHarassment"]
+	}
+]
