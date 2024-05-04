@@ -1,6 +1,6 @@
 extends Node
 var selected_cards = [];
-var turn = 0;
+var turn = 1;
 var score = 0;
 
 #var cards = {
@@ -16,125 +16,112 @@ var score = 0;
 #}
 
 var resources = {
-			0 :{
-				"name": "Social Media Platform",
-				#"desc": "This is facebook",
-				"cards": ["Cyber Bullying",
-					"Defamation",
-					"Exposure",
-					"Exclusion",
-					"Identity Theft",
-					"Mobbing Culture",
-					"Instigation",
-					"Online Deception",
-					"Online Harassment"
-				],
-				"feats": ["Connecting with people you know or don't know",
-					"Sharing your opinions",
-					"Live streaming",
-					"Group chat",
-					"Sharing photos/videos",
-					"Commenting on posts",
-					"Video calling",
-					"Content creation"
-				]
-				},
-			1 :{
-				"name": "Online Game",
-				"cards": ["Cyber Bullying",
-					"Defamation",
-					"Exposure",
-					"Exclusion",
-					"Identity Theft",
-					"Mobbing Culture",
-					"Instigation",
-					"Online Deception",
-					"Online Harassment"
-				],
-				"feats": ["Communicating during the game",
-					"Participating in tournaments",
-					"Forming teams",
-					"Creating characters or avatars",
-					"Connecting with people you know or don't know"
-				]
-				},
-			2 :{
-				"name": "Email Service",
-				"cards": ["Cyber Bullying",
-					"Defamation",
-					"Exposure",
-					"Identity Theft",
-					"Instigation",
-					"Online Deception",
-					"Online Harassment"
-				],
-				"feats": ["Sending/receiving emails",
-					"Sending/receiving files",
-					"Creating calendar events",
-					"Connecting with people you know or don't know"
-				]
-				},
-			3 :{
-				"name": "Video Sharing Platform",
-				"cards": ["Cyber Bullying",
-					"Defamation",
-					"Exposure",
-					"Exclusion",
-					"Identity Theft",
-					"Mobbing Culture",
-					"Instigation",
-					"Online Deception",
-					"Online Harassment"
-				],
-				"feats": ["Sharing videos",
-					"Content creation",
-					"Commenting",
-					"Subscribing to channels",
-					"Live streaming",
-					"Connecting with people you know or don't know"
-				]
-				},
-			4 :{
-				"name": "Online Shopping Application",
-				"cards": ["Cyber Bullying",
-					"Defamation",
-					"Exposure",
-					"Identity Theft",
-					"Instigation",
-					"Online Deception",
-					"Online Harassment"
-				],
-				"feats": ["Online shopping",
-					"Reviewing products",
-					"Following brands/boutiques",
-					"Product/price comparison",
-					"Shopping cart",
-					"Connecting with people you know or don’t know"
-				]
-				},
-			5 :{
-				"name": "Messaging Application",
-				"cards": ["Cyber Bullying",
-					"Defamation",
-					"Exposure",
-					"Exclusion",
-					"Identity Theft",
-					"Mobbing Culture",
-					"Instigation",
-					"Online Deception",
-					"Online Harassment"
-				],
-				"feats": ["Connecting with people you know or don't know",
-					"Individual/group chat",
-					"Creating groups",
-					"Sending or receiving messages/videos/photos/voice recordings",
-					"Video or voice calls"
-				]
-				}
-			}
+  1: {
+	"example": "Ignoring someone's contributions or presence online.",
+	"answer": "Exclusion"
+  },
+ 2: {
+	"example": "Deliberately leaving someone out of online activities or discussions.",
+	"answer": "Exclusion"
+  },
+  3: {
+	"example": "Sharing someone else's secrets or sending and posting embarrassing photos, videos, and personal information that may cause embarrassment to others in online environments.",
+	"answer": "Exposure"
+  },
+  4: {
+	"example": "Gaining access to someone's account and pretending to be them online.",
+	"answer": "Identity Theft"
+  },
+ 5: {
+	"example": "Sending threatening messages inducing fear in the victim.",
+	"answer": "Cyber Bullying"
+  },
+  6: {
+	"example": "Distorting and devaluing every statement made by the targeted person.",
+	"answer": "Mobbing Culture"
+  },
+  7: {
+	"example": "Multiple people joining together to demean and discredit a targeted person online.",
+	"answer": "Mobbing Culture"
+  },
+  8: {
+	"example": "Continuously sending insulting or disturbing messages to an individual.",
+	"answer": "Online Harassment"
+  },
+  9: {
+	"example": "Spreading gossip or lies about a person online.",
+	"answer": "Defamation"
+  },
+  10: {
+	"example": "Making derogatory comments on someone's social media posts.",
+	"answer": "Online Harassment"
+  },
+  11: {
+	"example": "Creating fake websites or advertisements to trick people into providing personal information.",
+	"answer": "Online Deception"
+  },
+  12: {
+	"example": "Using someone else's password to engage in conversations or share content as if you were them.",
+	"answer": "Identity Theft"
+  },
+  13: {
+	"example": "Inciting conflict and hostility online.",
+	"answer": "Instigation"
+  },
+  14: {
+	"example": "Sending deceptive messages or emails to persuade someone to reveal personal information.",
+	"answer": "Online Deception"
+  },
+  15: {
+	"example": "Ignoring someone's contributions or presence online.",
+	"answer": "Exclusion"
+  },
+  16: {
+	"example": "Sharing someone's secrets online.",
+	"answer": "Exposure"
+  },
+  17: {
+	"example": "Gaining access to someone's account and pretending to be them online.",
+	"answer": "Identity Theft"
+  },
+  18: {
+	"example": "Making derogatory comments on someone's social media posts.",
+	"answer": "Online Harassment"
+  },
+  19: {
+	"example": "Using aggressive and threatening language online to provoke others.",
+	"answer": "Instigation"
+  },
+  20: {
+	"example": "Continuously sending insulting or disturbing messages to an individual.",
+	"answer": "Online Harassment"
+  },
+  21: {
+	"example": "Deliberately leaving someone out of online activities or discussions.",
+	"answer": "Exclusion"
+  },
+  22: {
+	"example": "Spreading gossip or lies about a person online.",
+	"answer": "Defamation"
+  },
+  23: {
+	"example": "Sending threatening messages inducing fear in the victim.",
+	"answer": "Cyber Bullying"
+  },
+  24: {
+	"example": "Creating fake websites or advertisements to trick people into providing personal information.",
+	"answer": "Online Deception"
+  },
+  25: {
+	"example": "Using someone else's password to engage in conversations or share content as if you were them.",
+	"answer": "Identity Theft"
+  }
+}
+
 
 
 func _ready():
+	load_game();
 	var hbox_containers = [
 		get_node("VBoxContainer/HBoxContainer"),
 		get_node("VBoxContainer/HBoxContainer2"),
@@ -147,18 +134,30 @@ func _ready():
 		if hbox:
 			for card in hbox.get_children():
 				if card is Button:
-					card.pressed.connect(_on_card_toggled.bind(card))
+					card.pressed.connect(_on_card_pressed.bind(card))
 
-func _on_card_toggled(card):
-	if card:
-		if !selected_cards.has(card):
-			selected_cards.push_back(card)
-			print(selected_cards)
-			card.modulate = Color.GREEN
-		else:
-			selected_cards.erase(card)
-			print(selected_cards)
-			card.modulate = Color.AZURE
+func save():
+	var file = FileAccess.open('res://save.json', FileAccess.WRITE)
+	var save_data = {
+		"turn": turn, 
+		"score": score
+	}
+	file.store_line(var_to_str(save_data));
+	file = null;
+	
+func load_game():
+	var file = FileAccess.open('res://save.json', FileAccess.READ)
+	var content = file.get_as_text()
+	turn = content.save_data.turn;
+	score = content.save_data.score;
+	file = null;
+
+func _on_card_pressed(card):
+	if(len(selected_cards) == 0):
+		selected_cards.append(card);
+		card.modulate = Color.GREEN
+	else:
+		return
 			
 func deselect_all():
 	if !selected_cards.is_empty():
@@ -170,23 +169,16 @@ func deselect_all():
 
 func _read_in():
 	var feat_text = ""
-	for feat in resources[turn].feats:
-		feat_text += feat + "\n"
-	get_node("Panel/Def sapce").text = resources[turn].name + "\n" + feat_text #add features
+	get_node("Panel/Def sapce").text = resources[turn].example
 	
 func check():
-	var contains = 0
 	if(selected_cards):
 		for card in selected_cards:
-			if(resources[turn].cards.has(card.name)):
+			if(resources[turn].answer == selected_cards[0].name):
 				print(card.name)
-				contains += 1
+				return true
 			else:
 				return false
-		if(contains == len(resources[turn].cards)):
-			return true
-		else:
-			return false
 	else:
 		return false
 
@@ -203,21 +195,28 @@ func score_update(scored):
 
 
 func _on_done_pressed():
-	if(check()):
-		turn += 1
-		get_node("Panel/Def sapce").text = "Good Job"
-		score_update(true)
-		#for card in selected_cards:
-		#`_on_card_toggled_name(card)
-		await get_tree().create_timer(3.0).timeout
-		deselect_all()
-		_read_in()
+	save()
+	if(turn != 26):
+		if(check()):
+			turn += 1
+			get_node("Panel/Def sapce").text = "Good Job"
+			score_update(true)
+			#for card in selected_cards:
+			#`_on_card_toggled_name(card)
+			await get_tree().create_timer(3.0).timeout
+			deselect_all()
+			_read_in()
+		else:
+			get_node("Panel/Def sapce").text = "Try Again"
+			score_update(false)
+			await get_tree().create_timer(3.0).timeout
+			deselect_all()
+			_read_in()
 	else:
-		get_node("Panel/Def sapce").text = "Try Again"
-		score_update(false)
+		get_node("Panel/Def sapce").text = "Great Job! \n You Scored: " + score;
 		await get_tree().create_timer(3.0).timeout
-		deselect_all()
-		_read_in()
+		get_tree().change_scene_to_file('')
+	
 
 
 func _on_back_pressed():

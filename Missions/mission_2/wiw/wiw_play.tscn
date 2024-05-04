@@ -36,9 +36,9 @@ text = "Done"
 [node name="back" type="Button" parent="Sprite2D"]
 modulate = Color(0.223529, 0.705882, 0.105882, 1)
 offset_left = -481.909
-offset_top = -851.224
+offset_top = -865.753
 offset_right = -398.909
-offset_bottom = -777.224
+offset_bottom = -791.753
 theme_override_font_sizes/font_size = 40
 text = "<"
 
@@ -202,20 +202,22 @@ horizontal_alignment = 1
 offset_left = 57.0
 offset_top = 89.0
 offset_right = 529.0
-offset_bottom = 393.0
+offset_bottom = 399.0
 
 [node name="Def sapce" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 5.0
 offset_right = 470.0
-offset_bottom = 294.0
+offset_bottom = 303.0
 text = "Ready, set,
 START!!"
 label_settings = SubResource("LabelSettings_yfk5g")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="Sprite2D/Done" to="." method="_on_done_pressed"]
 [connection signal="pressed" from="Sprite2D/back" to="." method="_on_back_pressed"]
