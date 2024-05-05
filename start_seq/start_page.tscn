@@ -25,6 +25,7 @@ script = ExtResource("1_xgmka")
 position = Vector2(289, 512)
 scale = Vector2(1, 0.998769)
 texture = ExtResource("2_rv1xv")
+script = ExtResource("1_xgmka")
 
 [node name="avatar" type="Sprite2D" parent="."]
 z_index = 2
@@ -41,7 +42,7 @@ offset_bottom = 560.0
 theme = SubResource("Theme_0qpwl")
 theme_override_fonts/font = ExtResource("3_uaktd")
 theme_override_font_sizes/font_size = 30
-text = "<< Start >>"
+text = "Start"
 
 [node name="BottomMenu" parent="." instance=ExtResource("3_5ym3l")]
 scale = Vector2(0.399959, -0.00197317)

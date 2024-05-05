@@ -12,6 +12,5 @@ func _process(delta):
 	pass
 
 func _on_start_btn_pressed():
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://start_seq/player.tscn")
 	emit_signal("press")
-
