@@ -1,6 +1,7 @@
 extends Node
 var selected_cards = [];
 
+# These are our cards along with their definitions
 var cardDescriptions = {
 	"Cyber Bullying": "Sending messages containing threats or inducing fear to the cyber victim. Although it bears similarities to online harassment, here the cyber victim begins to worry about their own and their loved ones' safety.",
 	"Defamation": "The act of damaging a person's online reputation through gossip or lies is a form of cyberbullying. The goal is to put the cyber victim in a difficult situation, especially in front of their friends, family, or teachers.",
@@ -24,12 +25,16 @@ func _ready():
 		if hbox:
 			for card in hbox.get_children():
 				if card is Button:
+					# We want to load in all the cards to be connected
 					card.pressed.connect(_on_card_pressed.bind(card))
 		
 func _on_card_pressed(card):
+	# For our purposes, we only want one card able to be selected at a time, so upon clicking a card, deselect any other cards
 	deselect_all()
+	# Display the card definition on the screen
 	get_node("Panel/Def sapce").text = cardDescriptions[card.name]
 	selected_cards.append(card);
+	# Change the color of the card so the user knows it was selected
 	card.modulate = Color.GREEN
 
 
