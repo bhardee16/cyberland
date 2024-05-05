@@ -115,9 +115,13 @@ func _ready():
 	if save_data:
 		var parsed_data = JSON.parse_string(save_data)
 		if typeof(parsed_data) == TYPE_DICTIONARY:
-			score = int(parsed_data.score)
-			get_node("Sprite2D/Score").text = str(score)
-			turn = int(parsed_data.turn)
+			if int(parsed_data.turn > 25):
+				turn = 1
+				score = 0
+			else:
+				turn = int(parsed_data.turn)
+				score = int(parsed_data.score)
+				get_node("Sprite2D/Score").text = str(score)
 		else:
 			# Handle the case where the data is not in the expected format
 			print("Error: Saved data is not in the expected format")
@@ -159,7 +163,6 @@ func deselect_all():
 
 # _read_in sets the def space to the approiate example for the current turn.
 func _read_in():
-	#var feat_text = ""
 	if(turn != 26):
 		get_node("Panel/Def sapce").text = resources[turn].example
 	
