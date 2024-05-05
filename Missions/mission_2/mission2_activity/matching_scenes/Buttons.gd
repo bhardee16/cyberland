@@ -97,6 +97,7 @@ func _on_enter_pressed():
 
 func _refresh_scene():
 	if (len(selected) > 0):
+		next.set_disabled(true)
 		var buttons_to_reset = selected.duplicate()
 		for button in buttons_to_reset:
 			selected.erase(button)
