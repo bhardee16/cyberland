@@ -24,5 +24,5 @@ func _on_task_2_button_pressed():
 	get_tree().change_scene_to_file("res://Missions/mission_2/mission2_game/mission2_cards.tscn")
 
 func _on_task_3_button_pressed():
-	get_tree().change_scene_to_file("res://Missions/mission_2/mission2_activity/matching_scenes/social_media.tscn")
+	get_tree().change_scene_to_file("res://Missions/mission_2/mission2_activity/activity_start.tscn")
 

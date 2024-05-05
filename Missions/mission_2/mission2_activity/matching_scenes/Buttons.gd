@@ -52,13 +52,6 @@ func read_file(file):
 
 func _on_pressed(button):
 	message.set_text("")
-	#if (unselected): 
-		#button.set_button_icon(load("res://Images/Task 2 Selected Pieces/" + self.get_name() + "Selected.png"))
-		#button.set_pressed(true)
-		#selected.append(self.get_name());
-		#print(selected)
-		#print(self.get_name())
-		#unselected = false;
 	if (button): 
 		if !selected.has(button):
 			selected.push_back(button)
@@ -111,10 +104,14 @@ func _refresh_scene():
 
 				
 func _on_next_pressed():
-	item_index+=1
-	item = dict[item_index]
-	app.text = item.application
-	_refresh_scene()
+	print(item_index)
+	if (item_index >= 5):
+		get_tree().change_scene_to_file("res://Missions/mission_2/mission2_activity/End_Screen.tscn")
+	else:
+		item_index+=1
+		item = dict[item_index]
+		app.text = item.application
+		_refresh_scene()
 	#else:
 		#button.set_button_icon(load("res://Images/Task 2 Unselected Pieces/" + self.get_name() + "Unselected.png"))
 		#button.set_pressed(false)
