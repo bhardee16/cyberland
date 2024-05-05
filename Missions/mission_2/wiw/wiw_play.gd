@@ -124,7 +124,16 @@ var resources = {
 
 
 func _ready():
-	load_game();
+	var save_data = save_manager.read_save()
+	var parsed_data = JSON.parse_string(save_data)
+	if typeof(parsed_data) == TYPE_DICTIONARY:
+		score = int(parsed_data.score)
+		get_node("Sprite2D/Score").text = str(score)
+		turn = int(parsed_data.turn)
+	else:
+		# Handle the case where the data is not in the expected format
+		print("Error: Saved data is not in the expected format")
+	
 	var hbox_containers = [
 		get_node("VBoxContainer/HBoxContainer"),
 		get_node("VBoxContainer/HBoxContainer2"),
@@ -139,37 +148,16 @@ func _ready():
 				if card is Button:
 					card.pressed.connect(_on_card_pressed.bind(card))
 
-func save():
-	var file = FileAccess.open('res://save.json', FileAccess.WRITE)
-	var save_data = {
-		0: turn, 
-		1: score
-	}
-	#file.store_line(var_to_str(save_data));
-	file.store_var(save_data);
-	file = null;
-	
-func load_game():
-	var file = FileAccess.open('res://save.json', FileAccess.READ)
-	#var content = file.get_as_text()
-	#turn = content.save_data[0];
-	#score = content.save_data[1];
-	#file = null;
-	#var file = FileAccess.open('res://save.json', FileAccess.READ)
-	if file and file.get_len() > 0:
-		var content = JSON.parse_string(file.get_as_text())
-		#var content = JSON.parse(file.get_as_text())
-		if content:
-			turn = content["turn"]
-			score = content["score"]
-		file.close()
-
 
 			
 func _on_card_pressed(card):
-	deselect_all()
-	selected_cards.append(card);
-	card.modulate = Color.GREEN
+	if !selected_cards.has(card):
+		deselect_all()
+		selected_cards.append(card);
+		card.modulate = Color.GREEN
+	else:
+		deselect_all()
+		selected_cards.clear()
 
 func deselect_all():
 	if !selected_cards.is_empty():
@@ -207,14 +195,11 @@ func score_update(scored):
 
 
 func _on_done_pressed():
-	save()
 	if(turn != 26):
 		if(check()):
 			turn += 1
 			get_node("Panel/Def sapce").text = correct[randi_range(0, 4)]
 			score_update(true)
-			#for card in selected_cards:
-			#`_on_card_toggled_name(card)
 			await get_tree().create_timer(2.0).timeout
 			deselect_all()
 			_read_in()
@@ -228,6 +213,7 @@ func _on_done_pressed():
 		get_node("Panel/Def sapce").text = "Great Job! \n You Scored: " + score;
 		await get_tree().create_timer(3.0).timeout
 		get_tree().change_scene_to_file('')
+	save_manager.write_save(JSON.stringify({'turn':  turn, 'score': score}))
 	
 
 
