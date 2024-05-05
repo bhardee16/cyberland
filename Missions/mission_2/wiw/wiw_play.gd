@@ -2,21 +2,8 @@ extends Node
 var selected_cards = [];
 var turn = 1;
 var score = 0;
-#var seen = [];
 var correct = ["Good Job!", "Amazing!", "Wow, nice job!", "Quick thinking!", "You're great at this! :)"]
 var incorrect = ["Try again :(", "Almsot got it, let's try again", "So close!", "You got it next time!"]
-
-#var cards = {
-	#'Cyber Bullying': Button#49190798575
-	#,'Defamation':Button#49241130215
-	#,'Exposure':Button#49291461857
-	#,'Exclusion':Button#49375347932
-	#,'Identity Theft':Button#49425679645
-	#,'Mobbing Culture':Button#49476011296
-	#,'Instigation':Button#49559897381
-	#,'Online Deception':Button#49610229032
-	#,'Online Harassment':Button#49660560683
-#}
 
 var resources = {
   1: {
@@ -124,7 +111,7 @@ var resources = {
 
 
 func _ready():
-	var save_data = save_manager.read_save()
+	var save_data = save_manager.read_save() # Read in saved data and loads score and turn.
 	if save_data:
 		var parsed_data = JSON.parse_string(save_data)
 		if typeof(parsed_data) == TYPE_DICTIONARY:
@@ -143,14 +130,15 @@ func _ready():
 	
 	_read_in()
 	
-	for hbox in hbox_containers:
+	for hbox in hbox_containers: # creates even handelers for each button
 		if hbox:
 			for card in hbox.get_children():
 				if card is Button:
 					card.pressed.connect(_on_card_pressed.bind(card))
 
 
-			
+# _on_card_pressed adds the card to an array. If the card is pressed again, it is removed. 
+# If another card is pressed, the initial card is removed and the current card is added to the array.
 func _on_card_pressed(card):
 	if !selected_cards.has(card):
 		deselect_all()
@@ -160,6 +148,7 @@ func _on_card_pressed(card):
 		deselect_all()
 		selected_cards.clear()
 
+# diselect_all removes the green anc clears the card array.
 func deselect_all():
 	if !selected_cards.is_empty():
 		var cards_to_deselect = selected_cards.duplicate()
@@ -168,10 +157,13 @@ func deselect_all():
 			card.modulate = Color.AZURE
 			
 
+# _read_in sets the def space to the approiate example for the current turn.
 func _read_in():
 	#var feat_text = ""
-	get_node("Panel/Def sapce").text = resources[turn].example
+	if(turn != 26):
+		get_node("Panel/Def sapce").text = resources[turn].example
 	
+# check compares the card selected to the answer of the question at a specific turn, if it is right, it returns true, and if it is wrong it returns false.
 func check():
 	if(selected_cards):
 		for card in selected_cards:
@@ -183,6 +175,7 @@ func check():
 	else:
 		return false
 
+# score_update updates the score variable and changes the score label to the updated score.
 func score_update(scored):
 	if(scored):
 		score += 1
@@ -194,29 +187,42 @@ func score_update(scored):
 			score -= 1
 			get_node("Sprite2D/Score").text = str(score)
 
-
+# _on_done_pressed is an event handler for the done button, but also the driving force of our game. Nothing happens unless the done button is pressed.
 func _on_done_pressed():
-	if(turn != 26):
-		if(check()):
-			turn += 1
-			get_node("Panel/Def sapce").text = correct[randi_range(0, 4)]
-			score_update(true)
-			await get_tree().create_timer(2.0).timeout
-			deselect_all()
-			_read_in()
-		else:
-			get_node("Panel/Def sapce").text = incorrect[randi_range(0,3)]
-			score_update(false)
-			await get_tree().create_timer(2.0).timeout
-			deselect_all()
-			_read_in()
+	if(check()):
+		turn += 1
+		get_node("Panel/Def sapce").text = correct[randi_range(0, 4)]
+		score_update(true)
+		await get_tree().create_timer(2.0).timeout
+		deselect_all()
+		_read_in()
+		if(turn == 26): # this determines if the game is over. If turn == 26, the game is finished.
+			get_node("Panel/Def sapce").text = "Great Job! \n You Scored: " + str(score)
+			await get_tree().create_timer(3.0).timeout
+			get_node("Sprite2D/Done").visible = false
+			get_node("Sprite2D/Next Game").visible = true
+			get_node("Sprite2D/Exit").visible = true
 	else:
-		get_node("Panel/Def sapce").text = "Great Job! \n You Scored: " + score;
-		await get_tree().create_timer(3.0).timeout
-		get_tree().change_scene_to_file('')
+		get_node("Panel/Def sapce").text = incorrect[randi_range(0,3)]
+		score_update(false)
+		await get_tree().create_timer(2.0).timeout
+		deselect_all()
+		_read_in()
 	save_manager.write_save(JSON.stringify({'turn':  turn, 'score': score}))
 	
 
-
+# _on_back_pressed is an event handler that allows the user to go back to the definition screen.
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Missions/mission_2/wiw/wiw_demo.tscn")
+	
+
+
+
+func _on_next_game_pressed():
+	get_tree().change_scene_to_file("res://Missions/mission_2/mission2_activity/activity_start.tscn")
+	
+
+
+
+func _on_exit_pressed():
+	get_tree().change_scene_to_file("res://cyberland_map.tscn")
