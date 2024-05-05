@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mty0vqp3xewh"
-path="res://.godot/imported/IndecentHarrassmentUnselected.png-5804683fd64bc68d12d34529bc7a7f37.ctex"
+uid="uid://bwymw76o802u7"
+path="res://.godot/imported/IndecentHarassmentSelected.png-542cb1ea27db0cec276b863e6e5a8801.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Task 2 Unselected Pieces/IndecentHarrassmentUnselected.png"
-dest_files=["res://.godot/imported/IndecentHarrassmentUnselected.png-5804683fd64bc68d12d34529bc7a7f37.ctex"]
+source_file="res://Images/Task 2 Selected Pieces/IndecentHarassmentSelected.png"
+dest_files=["res://.godot/imported/IndecentHarassmentSelected.png-542cb1ea27db0cec276b863e6e5a8801.ctex"]
 
 [params]
 
