@@ -22,3 +22,7 @@ func _on_task_1_button_pressed():
 
 func _on_task_2_button_pressed():
 	get_tree().change_scene_to_file("res://Missions/mission_2/wiw/wiw_demo.tscn")
+
+func _on_task_3_button_pressed():
+	get_tree().change_scene_to_file("res://Missions/mission_2/mission2_activity/activity_start.tscn")
+
