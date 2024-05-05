@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dre603bflyd2o"]
+
+[ext_resource type="Texture2D" uid="uid://b1iov6mmay580" path="res://Images/cityscape.png" id="1_6o46f"]
+[ext_resource type="Script" path="res://start_seq/player.gd" id="2_gtmyo"]
+[ext_resource type="FontFile" uid="uid://c8mehlkrpv7vi" path="res://Roboto-Medium.ttf" id="3_yp7m2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57qnh"]
+bg_color = Color(0.619608, 0.619608, 0.619608, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_go4l1"]
+Button/styles/hover = SubResource("StyleBoxFlat_57qnh")
+Button/styles/normal = SubResource("StyleBoxFlat_57qnh")
+Button/styles/pressed = SubResource("StyleBoxFlat_57qnh")
+
+[node name="Player" type="Node2D"]
+
+[node name="cityBackground" type="Sprite2D" parent="."]
+position = Vector2(289, 512)
+scale = Vector2(1, 0.998769)
+texture = ExtResource("1_6o46f")
+script = ExtResource("2_gtmyo")
+
+[node name="TextEdit" type="TextEdit" parent="cityBackground"]
+offset_left = -142.0
+offset_top = -196.242
+offset_right = 136.0
+offset_bottom = -72.2416
+placeholder_text = "Enter your name here!"
+script = ExtResource("2_gtmyo")
+
+[node name="start" type="Button" parent="cityBackground"]
+z_index = 1
+offset_left = -128.0
+offset_top = 17.0209
+offset_right = 128.0
+offset_bottom = 113.021
+theme = SubResource("Theme_go4l1")
+theme_override_fonts/font = ExtResource("3_yp7m2")
+theme_override_font_sizes/font_size = 30
+text = "START"
+
+[connection signal="pressed" from="cityBackground/start" to="cityBackground" method="_on_start_pressed"]

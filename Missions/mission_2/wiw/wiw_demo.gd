@@ -28,7 +28,6 @@ func _ready():
 		
 func _on_card_pressed(card):
 	deselect_all()
-	selected_cards.clear()
 	get_node("Panel/Def sapce").text = cardDescriptions[card.name]
 	selected_cards.append(card);
 	card.modulate = Color.GREEN
@@ -37,7 +36,10 @@ func _on_card_pressed(card):
 func deselect_all():
 	if !selected_cards.is_empty():
 		var cards_to_deselect = selected_cards.duplicate()
+		selected_cards.clear()
 		for card in cards_to_deselect:
-			selected_cards.erase(card)
 			card.modulate = Color.AZURE
 		get_node("Panel/Def sapce").text = "Def Space."
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file("res://Missions/mission_2/wiw/wiw_play.tscn")

@@ -2,6 +2,9 @@ extends Node
 var selected_cards = [];
 var turn = 1;
 var score = 0;
+#var seen = [];
+var correct = ["Good Job!", "Amazing!", "Wow, nice job!", "Quick thinking!", "You're great at this! :)"]
+var incorrect = ["Try again :(", "Almsot got it, let's try again", "So close!", "You got it next time!"]
 
 #var cards = {
 	#'Cyber Bullying': Button#49190798575
@@ -139,36 +142,45 @@ func _ready():
 func save():
 	var file = FileAccess.open('res://save.json', FileAccess.WRITE)
 	var save_data = {
-		"turn": turn, 
-		"score": score
+		0: turn, 
+		1: score
 	}
-	file.store_line(var_to_str(save_data));
+	#file.store_line(var_to_str(save_data));
+	file.store_var(save_data);
 	file = null;
 	
 func load_game():
 	var file = FileAccess.open('res://save.json', FileAccess.READ)
-	var content = file.get_as_text()
-	turn = content.save_data.turn;
-	score = content.save_data.score;
-	file = null;
+	#var content = file.get_as_text()
+	#turn = content.save_data[0];
+	#score = content.save_data[1];
+	#file = null;
+	#var file = FileAccess.open('res://save.json', FileAccess.READ)
+	if file and file.get_len() > 0:
+		var content = JSON.parse_string(file.get_as_text())
+		#var content = JSON.parse(file.get_as_text())
+		if content:
+			turn = content["turn"]
+			score = content["score"]
+		file.close()
 
-func _on_card_pressed(card):
-	if(len(selected_cards) == 0):
-		selected_cards.append(card);
-		card.modulate = Color.GREEN
-	else:
-		return
+
 			
+func _on_card_pressed(card):
+	deselect_all()
+	selected_cards.append(card);
+	card.modulate = Color.GREEN
+
 func deselect_all():
 	if !selected_cards.is_empty():
 		var cards_to_deselect = selected_cards.duplicate()
+		selected_cards.clear()
 		for card in cards_to_deselect:
-			selected_cards.erase(card)
 			card.modulate = Color.AZURE
 			
 
 func _read_in():
-	var feat_text = ""
+	#var feat_text = ""
 	get_node("Panel/Def sapce").text = resources[turn].example
 	
 func check():
@@ -199,17 +211,17 @@ func _on_done_pressed():
 	if(turn != 26):
 		if(check()):
 			turn += 1
-			get_node("Panel/Def sapce").text = "Good Job"
+			get_node("Panel/Def sapce").text = correct[randi_range(0, 4)]
 			score_update(true)
 			#for card in selected_cards:
 			#`_on_card_toggled_name(card)
-			await get_tree().create_timer(3.0).timeout
+			await get_tree().create_timer(2.0).timeout
 			deselect_all()
 			_read_in()
 		else:
-			get_node("Panel/Def sapce").text = "Try Again"
+			get_node("Panel/Def sapce").text = incorrect[randi_range(0,3)]
 			score_update(false)
-			await get_tree().create_timer(3.0).timeout
+			await get_tree().create_timer(2.0).timeout
 			deselect_all()
 			_read_in()
 	else:
