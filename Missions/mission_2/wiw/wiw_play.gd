@@ -134,7 +134,7 @@ func _ready():
 	
 	_read_in()
 	
-	for hbox in hbox_containers: # creates even handelers for each button
+	for hbox in hbox_containers: # creates event handelers for each button
 		if hbox:
 			for card in hbox.get_children():
 				if card is Button:
@@ -145,14 +145,16 @@ func _ready():
 # If another card is pressed, the initial card is removed and the current card is added to the array.
 func _on_card_pressed(card):
 	if !selected_cards.has(card):
+		# We only want one card able to be selected at a time, so we deselect all other cards
 		deselect_all()
 		selected_cards.append(card);
+		# Change the card color upon being selected so the user knows which card they clicked
 		card.modulate = Color.GREEN
 	else:
 		deselect_all()
 		selected_cards.clear()
 
-# diselect_all removes the green anc clears the card array.
+# deselect_all removes the green and clears the card array.
 func deselect_all():
 	if !selected_cards.is_empty():
 		var cards_to_deselect = selected_cards.duplicate()
