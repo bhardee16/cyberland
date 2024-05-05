@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Missions/mission_2/wiw/wiw_play.gd" id="1_mbpop"]
 [ext_resource type="Texture2D" uid="uid://dd3jdpf1dkmp4" path="res://Images/Mission 2 Cards/Cyber Bullying.png" id="2_u62t2"]
 [ext_resource type="Texture2D" uid="uid://jul4vl2u527w" path="res://Images/Mission 2 Cards/Defamation.png" id="3_t5vca"]
-[ext_resource type="Texture2D" uid="uid://misgmacxn5pm" path="res://Images/Mission 2 Cards/Disclosure.png" id="4_ir3q0"]
+[ext_resource type="Texture2D" uid="uid://c4hfhjwskih3a" path="res://Images/Mission 2 Cards/Exposure.png" id="5_sh6g2"]
 [ext_resource type="Texture2D" uid="uid://v0yfijhuynvv" path="res://Images/Mission 2 Cards/Exclusion.png" id="5_t1tug"]
 [ext_resource type="Texture2D" uid="uid://bsm6rdcp0x4yn" path="res://Images/Mission 2 Cards/Identity Theft.png" id="6_aoxrh"]
 [ext_resource type="Texture2D" uid="uid://dbwrjdf4rppnt" path="res://Images/Mission 2 Cards/Mobbing Culture.png" id="7_xb7dk"]
@@ -102,7 +102,7 @@ custom_minimum_size = Vector2(122, 168)
 layout_mode = 2
 theme_override_colors/icon_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.705882, 0.690196, 0.72549, 1)
-icon = ExtResource("4_ir3q0")
+icon = ExtResource("5_sh6g2")
 flat = true
 icon_alignment = 1
 expand_icon = true
