@@ -125,14 +125,15 @@ var resources = {
 
 func _ready():
 	var save_data = save_manager.read_save()
-	var parsed_data = JSON.parse_string(save_data)
-	if typeof(parsed_data) == TYPE_DICTIONARY:
-		score = int(parsed_data.score)
-		get_node("Sprite2D/Score").text = str(score)
-		turn = int(parsed_data.turn)
-	else:
-		# Handle the case where the data is not in the expected format
-		print("Error: Saved data is not in the expected format")
+	if save_data:
+		var parsed_data = JSON.parse_string(save_data)
+		if typeof(parsed_data) == TYPE_DICTIONARY:
+			score = int(parsed_data.score)
+			get_node("Sprite2D/Score").text = str(score)
+			turn = int(parsed_data.turn)
+		else:
+			# Handle the case where the data is not in the expected format
+			print("Error: Saved data is not in the expected format")
 	
 	var hbox_containers = [
 		get_node("VBoxContainer/HBoxContainer"),

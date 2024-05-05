@@ -25,6 +25,7 @@ script = ExtResource("1_xgmka")
 position = Vector2(289, 512)
 scale = Vector2(1, 0.998769)
 texture = ExtResource("2_rv1xv")
+script = ExtResource("1_xgmka")
 
 [node name="avatar" type="Sprite2D" parent="."]
 z_index = 2
